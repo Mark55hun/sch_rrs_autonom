@@ -3,6 +3,7 @@ from rclpy.node import Node
 from std_msgs.msg import String
 import json
 
+
 class StatusLogger(Node):
     def __init__(self):
         super().__init__('status_logger')
@@ -32,6 +33,7 @@ class StatusLogger(Node):
             self.get_logger().warning("Battery low!")
         if task == "Charging" and isinstance(battery, (int, float)) and battery > 90:
             self.get_logger().warning("Charging inefficiently (battery > 90%)!")
+
 
 def main(args=None):
     rclpy.init(args=args)

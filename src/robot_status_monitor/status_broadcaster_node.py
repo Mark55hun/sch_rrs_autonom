@@ -4,6 +4,7 @@ from std_msgs.msg import String
 import random
 import json
 
+
 class StatusBroadcaster(Node):
     def __init__(self):
         super().__init__('status_broadcaster')
@@ -21,6 +22,7 @@ class StatusBroadcaster(Node):
         msg.data = json.dumps(status)
         self.publisher.publish(msg)
         self.get_logger().info(f"Published status: {msg.data}")
+
 
 def main(args=None):
     rclpy.init(args=args)
