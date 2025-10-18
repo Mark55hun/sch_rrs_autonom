@@ -7,7 +7,7 @@ package_name = 'robot_status_monitor'
 setup(
     name=package_name,
     version='0.0.1',
-    packages=find_packages(where='src'),
+    packages=['src'],  # find_packages(where='src'),
     package_dir={'': 'src'},
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
